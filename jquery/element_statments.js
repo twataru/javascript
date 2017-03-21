@@ -1,31 +1,40 @@
 //$('element').method();
 $( '#hoge' ).on( 'click hover', function(){
- alert( "hoge" );
-});
+    alert( "hoge" );
+} );
 
 
 /**
-* $.map
-*
-* ”z—ñ‚ÌŠe’l‚ğˆ—‚µ‚ÄV‚µ‚¢”z—ñ‚ğì¬‚·‚éB
-*/
+ * $.map
+ *
+ * é…åˆ—ã®å„å€¤ã‚’å‡¦ç†ã—ã¦æ–°ã—ã„é…åˆ—ã‚’ä½œæˆã™ã‚‹ã€‚
+ */
 
-//ƒ`ƒFƒbƒN‚ª“ü‚Á‚Ä‚¢‚é—v‘f‚Ìvalue‚ğæ“¾
+//ãƒã‚§ãƒƒã‚¯ãŒå…¥ã£ã¦ã„ã‚‹è¦ç´ ã®valueã‚’å–å¾—
 var checkBoxArray = $( '#checkbox :checked' ).map( function(){
- return $( this ).val();
-}).get();
+    return $( this ).val();
+} ).get();
 
 /**
-* $.prop
-* $.attr
-*
-* ‘®«ƒvƒƒpƒeƒB‚É’l‚ğİ’èA‚Ü‚½‚Íæ“¾
-*/
+ * $.prop
+ * $.attr
+ *
+ * å±æ€§ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã«å€¤ã‚’è¨­å®šã€ã¾ãŸã¯å–å¾—
+ */
 
-//ƒ`ƒFƒbƒN‚ğİ’è
+//ãƒã‚§ãƒƒã‚¯ã‚’è¨­å®š
 $( '#checkbox input:checkbox' ).prop( 'checked', true );
 
-//prop‚Æattr‚Ì‹““®‚Ìˆá‚¢
-var is_checked   = $('#check1').prop('checked');  //true‚ª•Ô‚é ( ^‹U’l )
-var attr_checked = $('#check1').attr('checked');  //'checked'‚ª•Ô‚é( •¶š—ñ )
+//propã¨attrã®æŒ™å‹•ã®é•ã„
+var is_checked = $( '#check1' ).prop( 'checked' );  //trueãŒè¿”ã‚‹ ( çœŸå½å€¤ )
+var attr_checked = $( '#check1' ).attr( 'checked' );  //'checked'ãŒè¿”ã‚‹( æ–‡å­—åˆ— )
+
+
+/*
+ * å‹•çš„ã«ç”Ÿæˆã—ãŸè¦ç´ ã«ã‚¤ãƒ™ãƒ³ãƒˆã‚’ç™»éŒ²ã™ã‚‹æ–¹æ³•
+ */
+//documentã«ãƒãƒ³ãƒ‰ãƒªãƒ³ã‚°ã•ã›ã‚‹
+$( document ).on( 'click', '.element', function(){
+    console.log( 'ã‚¤ãƒ™ãƒ³ãƒˆç™»éŒ²' );
+} );
 
